@@ -12,6 +12,6 @@ RUN apk add wget ca-certificates openssl-dev --update-cache && \
 
 WORKDIR /usr/src/searchcode
 
-EXPOSE 80/tcp
+EXPOSE 8080/tcp
 
 CMD ["/bin/sh", "searchcode-server.sh"]

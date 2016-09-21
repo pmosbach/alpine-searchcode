@@ -1,11 +1,11 @@
 FROM openjdk:8-jre-alpine
 
 RUN apk add wget ca-certificates openssl-dev --update-cache && \
-    update-ca-certificates && \
     wget -O /tmp/searchcode-server-community.tar.gz https://searchcode.com/static/searchcode-server-community.tar.gz && \
     cd /tmp && \
     tar -xvzf searchcode-server-community.tar.gz && \
-    mv searchcode-server-community/release /usr/src/searchcode && \
+    ls -al
+    mv searchcode-server-community/release/* /usr/src/searchcode && \
     ls -al /usr/src/searchcode
     rm -rf /var/cache/apk/*
 

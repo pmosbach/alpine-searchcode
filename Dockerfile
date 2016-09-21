@@ -5,8 +5,9 @@ RUN apk add wget ca-certificates openssl-dev --update-cache && \
     cd /tmp && \
     tar -xvzf searchcode-server-community.tar.gz && \
     ls -al && \
-    mv searchcode-server-community/release/* /usr/src/searchcode && \
-    ls -al /usr/src/searchcode
+    mkdir -p /usr/src && \
+    mv searchcode-server-community/release /usr/src/searchcode && \
+    ls -al /usr/src/searchcode && \
     rm -rf /var/cache/apk/*
 
 WORKDIR /usr/src/searchcode

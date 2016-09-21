@@ -1,0 +1,6 @@
+build_image:
+  stage: build
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.petermosbacher.com
+    - docker build -t registry.petermosbacher.com/pmosbach/alpine-searchcode .
+    - docker push registry.petermosbacher.com/pmosbach/alpine-searchcode
